@@ -1,0 +1,12 @@
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\Repositorio.dll.config
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\Repositorio.dll
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\Repositorio.pdb
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\EntityFramework.dll
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\EntityFramework.xml
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Meus Projetos\CorrenteDoBem\Repositorio\obj\Debug\Repositorio.dll
+C:\Meus Projetos\CorrenteDoBem\Repositorio\obj\Debug\Repositorio.pdb
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\Entidade.dll
+C:\Meus Projetos\CorrenteDoBem\Repositorio\bin\Debug\Entidade.pdb
+C:\Meus Projetos\CorrenteDoBem\Repositorio\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache

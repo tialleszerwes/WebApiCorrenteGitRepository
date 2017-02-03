@@ -1,0 +1,98 @@
+﻿<div style="margin-top:10%;">
+    <div class="container ng-scope" id="secaoGrid">
+        <!-- FILTROS -->
+        <header class="codrops-header quero-ajudar-filtro">
+            <h1 style="margin-bottom:2%;"><strong>Cadastrando Minha Necessidade</strong></h1>
+            <nav class="codrops-demos">
+                <div class="row filtroPesquisa">
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-12">
+                            <div class="text-left">
+                                <label for="nome">Conte-nos o que aconteceu: </label>
+                                <textarea ng-model="PedidoAjuda.oQueAconteceu" class="form-control" id="aconteceu" rows="4"> </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-8">
+                            <div class="text-left">
+                                <label for="produto">Digite o Endereço do acontecimento: </label>
+                                <input class="form-control" id="endereco" ng-model="PedidoAjuda.Endereco">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-left">
+                                <label for="catastrofe">Município: </label>
+                                <input class="form-control" id="municipio" ng-model="PedidoAjuda.Municipio" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="bootstrapTagsInputForm" method="post">
+                        <div class="col-md-12 form-group">
+                            <div class="col-md-12">
+                                <div class="text-left">
+                                    <label class="control-label">Do que você precisa? (Recursos)</label>
+                                    <input type="text" name="recursos" class="form-control" ng-model="PedidoAjuda.Recursos"
+                                           data-role="tagsinput" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-md-12 form-group">
+                        <div class="col-md-6">
+                            <div class="text-left">
+                                <label class="control-label">Insira Imagens do Acontecimento</label>
+                                <input class="form-control" id="teste">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <label>&nbsp;</label>
+                                <button class="btn btn-primary-necessito-ajuda btn-xl" ng-click="Salvar">Salvar</button>
+                            </div>
+                            <div class="col-md-6">
+                                <label>&nbsp;</label>
+                                <button href="#aindex" class="btn btn-danger btn-xl page-scroll">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <br />
+        <section>
+            <p style="color:#0e5737">Alguém pode estar pronto para te ajudar.<a href="#"> Corrente do Bem</a></p>
+        </section>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#bootstrapTagsInputForm')
+            .find('[name="recursos"]')
+            // Revalidate the recursos field when it is changed
+            .change(function (e) {
+                $('#bootstrapTagsInputForm').formValidation('revalidateField', 'recursos');
+            })
+            .end()
+            .formValidation({
+                framework: 'bootstrap',
+                excluded: ':disabled',
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    recursos: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Por favor selecione ao menos um recurso que você precisa.'
+                            }
+                        }
+                    }
+                }
+            });
+    });
+</script>

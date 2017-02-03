@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CorrenteDoBemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Anexo">
+    <Key>
+      <PropertyRef Name="IdAnexo" />
+    </Key>
+    <Property Name="IdAnexo" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CaminhoArquivo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnexoPedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdAnexoPedidoAjuda" />
+    </Key>
+    <Property Name="IdAnexoPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdAnexo" Type="int" Nullable="false" />
+    <Property Name="Capa" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatastrofeNatural">
+    <Key>
+      <PropertyRef Name="IdCatastrofeNatural" />
+    </Key>
+    <Property Name="IdCatastrofeNatural" Type="int" Nullable="false" />
+    <Property Name="IdMotivo" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Contato">
+    <Key>
+      <PropertyRef Name="IdContato" />
+    </Key>
+    <Property Name="IdContato" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Telefone" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DadoBancario">
+    <Key>
+      <PropertyRef Name="IdDadoBancario" />
+    </Key>
+    <Property Name="IdDadoBancario" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Banco" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doacao">
+    <Key>
+      <PropertyRef Name="IdDoacao" />
+    </Key>
+    <Property Name="IdDoacao" Type="int" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="int" />
+    <Property Name="Descricao" Type="varchar" MaxLength="300" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Observacao" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="IdEndereco" />
+    </Key>
+    <Property Name="IdEndereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rua" Type="varchar" MaxLength="50" />
+    <Property Name="Bairro" Type="varchar" MaxLength="50" />
+    <Property Name="Complemento" Type="varchar" MaxLength="50" />
+    <Property Name="Logradouro" Type="varchar" MaxLength="50" />
+    <Property Name="Numero" Type="varchar" MaxLength="20" />
+    <Property Name="Municipio" Type="varchar" MaxLength="50" />
+    <Property Name="PontoReferencia" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LocalEntrega">
+    <Key>
+      <PropertyRef Name="IdLocalEntrega" />
+    </Key>
+    <Property Name="IdLocalEntrega" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEndereco" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" />
+    <Property Name="Descricao" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="LocalEntregaEndereco">
+    <Key>
+      <PropertyRef Name="IdLocalEntregaEndereco" />
+    </Key>
+    <Property Name="IdLocalEntregaEndereco" Type="int" Nullable="false" />
+    <Property Name="IdContato" Type="int" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Motivo">
+    <Key>
+      <PropertyRef Name="IdMotivo" />
+    </Key>
+    <Property Name="IdMotivo" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdPedidoAjuda" />
+    </Key>
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdMotivo" Type="int" Nullable="false" />
+    <Property Name="IdPrecisoAjuda" Type="int" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="DtAcontecimento" Type="datetime" Nullable="false" />
+    <Property Name="DtCadastro" Type="datetime" Nullable="false" />
+    <Property Name="QuantidadeAfetados" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PedidoAjudaDadoBancario">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaDadoBancario" />
+    </Key>
+    <Property Name="IdPedidoAjudaDadoBancario" Type="int" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdDadoBancario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PedidoAjudaDoacao">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaDoacao" />
+    </Key>
+    <Property Name="IdPedidoAjudaDoacao" Type="int" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdDoacao" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PedidoAjudaLocalEntrega">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaLocalEntrega" />
+    </Key>
+    <Property Name="IdPedidoAjudaLocalEntrega" Type="int" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrecisoAjuda">
+    <Key>
+      <PropertyRef Name="IdPrecisoAjuda" />
+    </Key>
+    <Property Name="IdPrecisoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="IdProduto" />
+    </Key>
+    <Property Name="IdProduto" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="300" />
+    <Property Name="Tamanho" Type="varchar" MaxLength="20" />
+    <Property Name="Sexo" Type="varchar" MaxLength="10" />
+    <Property Name="Quantidade" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ProdutoDoacao">
+    <Key>
+      <PropertyRef Name="IdProdutoDoacao" />
+    </Key>
+    <Property Name="IdProdutoDoacao" Type="int" Nullable="false" />
+    <Property Name="IdDoacao" Type="int" Nullable="false" />
+    <Property Name="IdProduto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProdutoPedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdProdutoPedidoAjuda" />
+    </Key>
+    <Property Name="IdProdutoPedidoAjuda" Type="int" Nullable="false" />
+    <Property Name="IdProduto" Type="int" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QueroAjudar">
+    <Key>
+      <PropertyRef Name="IdQueroAjudar" />
+    </Key>
+    <Property Name="IdQueroAjudar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEndereco" Type="int" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DtNascimento" Type="datetime" Nullable="false" />
+    <Property Name="Login" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="HashSenha" Type="varchar" MaxLength="100" />
+    <Property Name="DtUltimoAcesso" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioContato">
+    <Key>
+      <PropertyRef Name="IdUsuarioContato" />
+    </Key>
+    <Property Name="IdUsuarioContato" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdContato" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioDadoBancario">
+    <Key>
+      <PropertyRef Name="IdUsuarioDadoBancario" />
+    </Key>
+    <Property Name="IdUsuarioDadoBancario" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdDadoBancario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ANEXO_ANEXOPEDIDOAJUDA">
+    <End Role="Anexo" Type="Self.Anexo" Multiplicity="1" />
+    <End Role="AnexoPedidoAjuda" Type="Self.AnexoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anexo">
+        <PropertyRef Name="IdAnexo" />
+      </Principal>
+      <Dependent Role="AnexoPedidoAjuda">
+        <PropertyRef Name="IdAnexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTATO_LOCALENTREGAENDERECO">
+    <End Role="Contato" Type="Self.Contato" Multiplicity="1" />
+    <End Role="LocalEntregaEndereco" Type="Self.LocalEntregaEndereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contato">
+        <PropertyRef Name="IdContato" />
+      </Principal>
+      <Dependent Role="LocalEntregaEndereco">
+        <PropertyRef Name="IdContato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTATO_USUARIOCONTATO">
+    <End Role="Contato" Type="Self.Contato" Multiplicity="1" />
+    <End Role="UsuarioContato" Type="Self.UsuarioContato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contato">
+        <PropertyRef Name="IdContato" />
+      </Principal>
+      <Dependent Role="UsuarioContato">
+        <PropertyRef Name="IdContato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO">
+    <End Role="DadoBancario" Type="Self.DadoBancario" Multiplicity="1" />
+    <End Role="PedidoAjudaDadoBancario" Type="Self.PedidoAjudaDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DADOBANCARIO_USUARIODADOBANCARIO">
+    <End Role="DadoBancario" Type="Self.DadoBancario" Multiplicity="1" />
+    <End Role="UsuarioDadoBancario" Type="Self.UsuarioDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Principal>
+      <Dependent Role="UsuarioDadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOACAO_LOCALENTREGA">
+    <End Role="LocalEntrega" Type="Self.LocalEntrega" Multiplicity="0..1" />
+    <End Role="Doacao" Type="Self.Doacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="Doacao">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOACAO_PRODUTODOACAO">
+    <End Role="Doacao" Type="Self.Doacao" Multiplicity="1" />
+    <End Role="ProdutoDoacao" Type="Self.ProdutoDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doacao">
+        <PropertyRef Name="IdDoacao" />
+      </Principal>
+      <Dependent Role="ProdutoDoacao">
+        <PropertyRef Name="IdDoacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_ENDERECO">
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+    <End Role="LocalEntrega" Type="Self.LocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="IdEndereco" />
+      </Principal>
+      <Dependent Role="LocalEntrega">
+        <PropertyRef Name="IdEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_LOCALENTREGAENDERECO">
+    <End Role="LocalEntrega" Type="Self.LocalEntrega" Multiplicity="1" />
+    <End Role="LocalEntregaEndereco" Type="Self.LocalEntregaEndereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="LocalEntregaEndereco">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA">
+    <End Role="LocalEntrega" Type="Self.LocalEntrega" Multiplicity="1" />
+    <End Role="PedidoAjudaLocalEntrega" Type="Self.PedidoAjudaLocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="PedidoAjudaLocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOTIVO_CATASTROFENATURAL">
+    <End Role="Motivo" Type="Self.Motivo" Multiplicity="1" />
+    <End Role="CatastrofeNatural" Type="Self.CatastrofeNatural" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motivo">
+        <PropertyRef Name="IdMotivo" />
+      </Principal>
+      <Dependent Role="CatastrofeNatural">
+        <PropertyRef Name="IdMotivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOTIVO_PRECISOAJUDA">
+    <End Role="Motivo" Type="Self.Motivo" Multiplicity="1" />
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motivo">
+        <PropertyRef Name="IdMotivo" />
+      </Principal>
+      <Dependent Role="PedidoAjuda">
+        <PropertyRef Name="IdMotivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA">
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="1" />
+    <End Role="AnexoPedidoAjuda" Type="Self.AnexoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="AnexoPedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_DOACAO">
+    <End Role="Doacao" Type="Self.Doacao" Multiplicity="1" />
+    <End Role="PedidoAjudaDoacao" Type="Self.PedidoAjudaDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doacao">
+        <PropertyRef Name="IdDoacao" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDoacao">
+        <PropertyRef Name="IdDoacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO">
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="1" />
+    <End Role="PedidoAjudaDadoBancario" Type="Self.PedidoAjudaDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDadoBancario">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO">
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="1" />
+    <End Role="PedidoAjudaDoacao" Type="Self.PedidoAjudaDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDoacao">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA">
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="1" />
+    <End Role="PedidoAjudaLocalEntrega" Type="Self.PedidoAjudaLocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaLocalEntrega">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA">
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="1" />
+    <End Role="ProdutoPedidoAjuda" Type="Self.ProdutoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="ProdutoPedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRECISOAJUDA_PEDIDOAJUDA">
+    <End Role="PrecisoAjuda" Type="Self.PrecisoAjuda" Multiplicity="0..1" />
+    <End Role="PedidoAjuda" Type="Self.PedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrecisoAjuda">
+        <PropertyRef Name="IdPrecisoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjuda">
+        <PropertyRef Name="IdPrecisoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRECISOAJUDA_USUARIO">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="PrecisoAjuda" Type="Self.PrecisoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="PrecisoAjuda">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUTO_PRODUTODOACAO">
+    <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+    <End Role="ProdutoDoacao" Type="Self.ProdutoDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="IdProduto" />
+      </Principal>
+      <Dependent Role="ProdutoDoacao">
+        <PropertyRef Name="IdProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUTO_PRODUTOPEDIDOAJUDA">
+    <End Role="Produto" Type="Self.Produto" Multiplicity="1" />
+    <End Role="ProdutoPedidoAjuda" Type="Self.ProdutoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="IdProduto" />
+      </Principal>
+      <Dependent Role="ProdutoPedidoAjuda">
+        <PropertyRef Name="IdProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUEROAJUDAR_USUARIO">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="QueroAjudar" Type="Self.QueroAjudar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="QueroAjudar">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ENDERECO">
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="IdEndereco" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIOCONTATO">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioContato" Type="Self.UsuarioContato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioContato">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIODADOBANCARIO">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioDadoBancario" Type="Self.UsuarioDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioDadoBancario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CorrenteDoBemModelStoreContainer">
+    <EntitySet Name="Anexo" EntityType="Self.Anexo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnexoPedidoAjuda" EntityType="Self.AnexoPedidoAjuda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatastrofeNatural" EntityType="Self.CatastrofeNatural" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contato" EntityType="Self.Contato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DadoBancario" EntityType="Self.DadoBancario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doacao" EntityType="Self.Doacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocalEntrega" EntityType="Self.LocalEntrega" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LocalEntregaEndereco" EntityType="Self.LocalEntregaEndereco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Motivo" EntityType="Self.Motivo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoAjuda" EntityType="Self.PedidoAjuda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoAjudaDadoBancario" EntityType="Self.PedidoAjudaDadoBancario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoAjudaDoacao" EntityType="Self.PedidoAjudaDoacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoAjudaLocalEntrega" EntityType="Self.PedidoAjudaLocalEntrega" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrecisoAjuda" EntityType="Self.PrecisoAjuda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produto" EntityType="Self.Produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProdutoDoacao" EntityType="Self.ProdutoDoacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProdutoPedidoAjuda" EntityType="Self.ProdutoPedidoAjuda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QueroAjudar" EntityType="Self.QueroAjudar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioContato" EntityType="Self.UsuarioContato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioDadoBancario" EntityType="Self.UsuarioDadoBancario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ANEXO_ANEXOPEDIDOAJUDA" Association="Self.FK_ANEXO_ANEXOPEDIDOAJUDA">
+      <End Role="Anexo" EntitySet="Anexo" />
+      <End Role="AnexoPedidoAjuda" EntitySet="AnexoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTATO_LOCALENTREGAENDERECO" Association="Self.FK_CONTATO_LOCALENTREGAENDERECO">
+      <End Role="Contato" EntitySet="Contato" />
+      <End Role="LocalEntregaEndereco" EntitySet="LocalEntregaEndereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTATO_USUARIOCONTATO" Association="Self.FK_CONTATO_USUARIOCONTATO">
+      <End Role="Contato" EntitySet="Contato" />
+      <End Role="UsuarioContato" EntitySet="UsuarioContato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO" Association="Self.FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO">
+      <End Role="DadoBancario" EntitySet="DadoBancario" />
+      <End Role="PedidoAjudaDadoBancario" EntitySet="PedidoAjudaDadoBancario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DADOBANCARIO_USUARIODADOBANCARIO" Association="Self.FK_DADOBANCARIO_USUARIODADOBANCARIO">
+      <End Role="DadoBancario" EntitySet="DadoBancario" />
+      <End Role="UsuarioDadoBancario" EntitySet="UsuarioDadoBancario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOACAO_LOCALENTREGA" Association="Self.FK_DOACAO_LOCALENTREGA">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="Doacao" EntitySet="Doacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOACAO_PRODUTODOACAO" Association="Self.FK_DOACAO_PRODUTODOACAO">
+      <End Role="Doacao" EntitySet="Doacao" />
+      <End Role="ProdutoDoacao" EntitySet="ProdutoDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_ENDERECO" Association="Self.FK_LOCALENTREGA_ENDERECO">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_LOCALENTREGAENDERECO" Association="Self.FK_LOCALENTREGA_LOCALENTREGAENDERECO">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="LocalEntregaEndereco" EntitySet="LocalEntregaEndereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA" Association="Self.FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="PedidoAjudaLocalEntrega" EntitySet="PedidoAjudaLocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOTIVO_CATASTROFENATURAL" Association="Self.FK_MOTIVO_CATASTROFENATURAL">
+      <End Role="Motivo" EntitySet="Motivo" />
+      <End Role="CatastrofeNatural" EntitySet="CatastrofeNatural" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOTIVO_PRECISOAJUDA" Association="Self.FK_MOTIVO_PRECISOAJUDA">
+      <End Role="Motivo" EntitySet="Motivo" />
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA" Association="Self.FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="AnexoPedidoAjuda" EntitySet="AnexoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_DOACAO" Association="Self.FK_PEDIDOAJUDA_DOACAO">
+      <End Role="Doacao" EntitySet="Doacao" />
+      <End Role="PedidoAjudaDoacao" EntitySet="PedidoAjudaDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO" Association="Self.FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaDadoBancario" EntitySet="PedidoAjudaDadoBancario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO" Association="Self.FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaDoacao" EntitySet="PedidoAjudaDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA" Association="Self.FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaLocalEntrega" EntitySet="PedidoAjudaLocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA" Association="Self.FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="ProdutoPedidoAjuda" EntitySet="ProdutoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRECISOAJUDA_PEDIDOAJUDA" Association="Self.FK_PRECISOAJUDA_PEDIDOAJUDA">
+      <End Role="PrecisoAjuda" EntitySet="PrecisoAjuda" />
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRECISOAJUDA_USUARIO" Association="Self.FK_PRECISOAJUDA_USUARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PrecisoAjuda" EntitySet="PrecisoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUTO_PRODUTODOACAO" Association="Self.FK_PRODUTO_PRODUTODOACAO">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ProdutoDoacao" EntitySet="ProdutoDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUTO_PRODUTOPEDIDOAJUDA" Association="Self.FK_PRODUTO_PRODUTOPEDIDOAJUDA">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ProdutoPedidoAjuda" EntitySet="ProdutoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUEROAJUDAR_USUARIO" Association="Self.FK_QUEROAJUDAR_USUARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="QueroAjudar" EntitySet="QueroAjudar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ENDERECO" Association="Self.FK_USUARIO_ENDERECO">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIOCONTATO" Association="Self.FK_USUARIO_USUARIOCONTATO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioContato" EntitySet="UsuarioContato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIODADOBANCARIO" Association="Self.FK_USUARIO_USUARIODADOBANCARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioDadoBancario" EntitySet="UsuarioDadoBancario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

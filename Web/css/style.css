@@ -1,0 +1,81 @@
+﻿header .header-content{
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+    --------- div da grid
+*/
+.figure{
+    background-color: #b4c7be;
+}
+
+.descricao{
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+table.backDescricao{
+    margin-bottom: 0 !important;
+}
+
+table.backDescricao tr td:first-child {
+    text-align: left;
+}
+
+table.backDescricao tr td:last-child {
+    text-align: right;
+}
+
+.backDescricao{
+    background-color:rgb(151, 180, 166);
+    padding: 10px 0 0 0;
+}
+
+ul.descricao li {
+    margin: 5px 0;
+    border-bottom: 1px dotted rgba(128, 128, 128, .3);
+    padding-bottom: 6px;
+}
+
+header .header-content .header-content-inner p {
+    text-shadow: 0.5px 0.5px 3px rgba(255, 255, 255, 0.4);
+    color: #0e5737;
+}
+
+.row.filtroPesquisa label {
+    font-size: 14px;
+}
+
+.paginacao.row {
+    padding-left: 70px;
+    margin-top: -50px;
+}
+
+/* bootstrap components */
+.row.filtroPesquisa .form-control {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #fff;
+}
+
+.pagination>li>a, .pagination>li>span {
+    color: #333333;
+    background-color: #97b4a6;
+    border: 1px solid #b4c7be;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 1px solid #b4c7be;
+}
+
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    color: #b4c7be;
+    background-color: #6c887a;
+    border-color: #6c887a;
+}
+
+/*Style criado*/
+img.icone-categoria {
+    width:60%;
+    height:60%;
+}

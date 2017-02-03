@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CorrenteDoBemModelStoreContainer" CdmEntityContainer="CorrenteDoBemEntities">
+    <EntitySetMapping Name="AnexoPedidoAjuda">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.AnexoPedidoAjuda">
+        <MappingFragment StoreEntitySet="AnexoPedidoAjuda">
+          <ScalarProperty Name="Capa" ColumnName="Capa" />
+          <ScalarProperty Name="IdAnexo" ColumnName="IdAnexo" />
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+          <ScalarProperty Name="IdAnexoPedidoAjuda" ColumnName="IdAnexoPedidoAjuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatastrofeNatural">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.CatastrofeNatural">
+        <MappingFragment StoreEntitySet="CatastrofeNatural">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" />
+          <ScalarProperty Name="IdCatastrofeNatural" ColumnName="IdCatastrofeNatural" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contato">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Contato">
+        <MappingFragment StoreEntitySet="Contato">
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IdContato" ColumnName="IdContato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DadoBancario">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.DadoBancario">
+        <MappingFragment StoreEntitySet="DadoBancario">
+          <ScalarProperty Name="Banco" ColumnName="Banco" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdDadoBancario" ColumnName="IdDadoBancario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doacao">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Doacao">
+        <MappingFragment StoreEntitySet="Doacao">
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdLocalEntrega" ColumnName="IdLocalEntrega" />
+          <ScalarProperty Name="IdDoacao" ColumnName="IdDoacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Endereco">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Endereco">
+        <MappingFragment StoreEntitySet="Endereco">
+          <ScalarProperty Name="PontoReferencia" ColumnName="PontoReferencia" />
+          <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Logradouro" ColumnName="Logradouro" />
+          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalEntrega">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.LocalEntrega">
+        <MappingFragment StoreEntitySet="LocalEntrega">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
+          <ScalarProperty Name="IdLocalEntrega" ColumnName="IdLocalEntrega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocalEntregaEndereco">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.LocalEntregaEndereco">
+        <MappingFragment StoreEntitySet="LocalEntregaEndereco">
+          <ScalarProperty Name="IdLocalEntrega" ColumnName="IdLocalEntrega" />
+          <ScalarProperty Name="IdContato" ColumnName="IdContato" />
+          <ScalarProperty Name="IdLocalEntregaEndereco" ColumnName="IdLocalEntregaEndereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motivo">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Motivo">
+        <MappingFragment StoreEntitySet="Motivo">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoAjudaDoacao">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.PedidoAjudaDoacao">
+        <MappingFragment StoreEntitySet="PedidoAjudaDoacao">
+          <ScalarProperty Name="IdDoacao" ColumnName="IdDoacao" />
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+          <ScalarProperty Name="IdPedidoAjudaDoacao" ColumnName="IdPedidoAjudaDoacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoAjudaLocalEntrega">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.PedidoAjudaLocalEntrega">
+        <MappingFragment StoreEntitySet="PedidoAjudaLocalEntrega">
+          <ScalarProperty Name="IdLocalEntrega" ColumnName="IdLocalEntrega" />
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+          <ScalarProperty Name="IdPedidoAjudaLocalEntrega" ColumnName="IdPedidoAjudaLocalEntrega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrecisoAjuda">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.PrecisoAjuda">
+        <MappingFragment StoreEntitySet="PrecisoAjuda">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPrecisoAjuda" ColumnName="IdPrecisoAjuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produto">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Produto">
+        <MappingFragment StoreEntitySet="Produto">
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Tamanho" ColumnName="Tamanho" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdutoDoacao">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.ProdutoDoacao">
+        <MappingFragment StoreEntitySet="ProdutoDoacao">
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+          <ScalarProperty Name="IdDoacao" ColumnName="IdDoacao" />
+          <ScalarProperty Name="IdProdutoDoacao" ColumnName="IdProdutoDoacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProdutoPedidoAjuda">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.ProdutoPedidoAjuda">
+        <MappingFragment StoreEntitySet="ProdutoPedidoAjuda">
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+          <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+          <ScalarProperty Name="IdProdutoPedidoAjuda" ColumnName="IdProdutoPedidoAjuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QueroAjudar">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.QueroAjudar">
+        <MappingFragment StoreEntitySet="QueroAjudar">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdQueroAjudar" ColumnName="IdQueroAjudar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="DtUltimoAcesso" ColumnName="DtUltimoAcesso" />
+          <ScalarProperty Name="HashSenha" ColumnName="HashSenha" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="DtNascimento" ColumnName="DtNascimento" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdEndereco" ColumnName="IdEndereco" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioContato">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.UsuarioContato">
+        <MappingFragment StoreEntitySet="UsuarioContato">
+          <ScalarProperty Name="IdContato" ColumnName="IdContato" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdUsuarioContato" ColumnName="IdUsuarioContato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioDadoBancario">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.UsuarioDadoBancario">
+        <MappingFragment StoreEntitySet="UsuarioDadoBancario">
+          <ScalarProperty Name="IdDadoBancario" ColumnName="IdDadoBancario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdUsuarioDadoBancario" ColumnName="IdUsuarioDadoBancario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anexo">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.Anexo">
+        <MappingFragment StoreEntitySet="Anexo">
+          <ScalarProperty Name="CaminhoArquivo" ColumnName="CaminhoArquivo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdAnexo" ColumnName="IdAnexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoAjudaDadoBancario">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.PedidoAjudaDadoBancario">
+        <MappingFragment StoreEntitySet="PedidoAjudaDadoBancario">
+          <ScalarProperty Name="IdDadoBancario" ColumnName="IdDadoBancario" />
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+          <ScalarProperty Name="IdPedidoAjudaDadoBancario" ColumnName="IdPedidoAjudaDadoBancario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoAjuda">
+      <EntityTypeMapping TypeName="CorrenteDoBemModel.PedidoAjuda">
+        <MappingFragment StoreEntitySet="PedidoAjuda">
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="QuantidadeAfetados" ColumnName="QuantidadeAfetados" />
+          <ScalarProperty Name="DtCadastro" ColumnName="DtCadastro" />
+          <ScalarProperty Name="DtAcontecimento" ColumnName="DtAcontecimento" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdPrecisoAjuda" ColumnName="IdPrecisoAjuda" />
+          <ScalarProperty Name="IdMotivo" ColumnName="IdMotivo" />
+          <ScalarProperty Name="IdPedidoAjuda" ColumnName="IdPedidoAjuda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

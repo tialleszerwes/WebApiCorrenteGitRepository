@@ -1,0 +1,10 @@
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\Entidade.dll.config
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\Entidade.dll
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\Entidade.pdb
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\EntityFramework.dll
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\EntityFramework.SqlServer.dll
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\EntityFramework.xml
+C:\Meus Projetos\CorrenteDoBem\Entidade\bin\Debug\EntityFramework.SqlServer.xml
+C:\Meus Projetos\CorrenteDoBem\Entidade\obj\Debug\Entidade.dll
+C:\Meus Projetos\CorrenteDoBem\Entidade\obj\Debug\Entidade.pdb
+C:\Meus Projetos\CorrenteDoBem\Entidade\obj\Debug\Entidade.csprojResolveAssemblyReference.cache

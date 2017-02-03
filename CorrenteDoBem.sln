@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{7EB4DD07-D51B-49DA-A347-D07F9A173FC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{A71CDF80-0DD8-4647-94B6-1B3B4D185D09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{50131659-3AEE-44CF-8B3E-73CA192292B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidade", "Entidade\Entidade.csproj", "{C2901126-A363-4C25-AE71-A3793C510628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{E43A7167-5932-4195-833F-415D3588C1A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EB4DD07-D51B-49DA-A347-D07F9A173FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB4DD07-D51B-49DA-A347-D07F9A173FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB4DD07-D51B-49DA-A347-D07F9A173FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB4DD07-D51B-49DA-A347-D07F9A173FC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71CDF80-0DD8-4647-94B6-1B3B4D185D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71CDF80-0DD8-4647-94B6-1B3B4D185D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71CDF80-0DD8-4647-94B6-1B3B4D185D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71CDF80-0DD8-4647-94B6-1B3B4D185D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50131659-3AEE-44CF-8B3E-73CA192292B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50131659-3AEE-44CF-8B3E-73CA192292B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50131659-3AEE-44CF-8B3E-73CA192292B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50131659-3AEE-44CF-8B3E-73CA192292B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2901126-A363-4C25-AE71-A3793C510628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2901126-A363-4C25-AE71-A3793C510628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2901126-A363-4C25-AE71-A3793C510628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2901126-A363-4C25-AE71-A3793C510628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43A7167-5932-4195-833F-415D3588C1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43A7167-5932-4195-833F-415D3588C1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43A7167-5932-4195-833F-415D3588C1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43A7167-5932-4195-833F-415D3588C1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tialles.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Web\\Web.csproj
+		SccProjectName1 = Web
+		SccLocalPath1 = Web
+		SccProjectUniqueName2 = Api\\Api.csproj
+		SccProjectName2 = Api
+		SccLocalPath2 = Api
+		SccProjectUniqueName3 = Repositorio\\Repositorio.csproj
+		SccProjectName3 = Repositorio
+		SccLocalPath3 = Repositorio
+		SccProjectUniqueName4 = Entidade\\Entidade.csproj
+		SccProjectName4 = Entidade
+		SccLocalPath4 = Entidade
+		SccProjectUniqueName5 = Negocio\\Negocio.csproj
+		SccProjectName5 = Negocio
+		SccLocalPath5 = Negocio
+	EndGlobalSection
+EndGlobal

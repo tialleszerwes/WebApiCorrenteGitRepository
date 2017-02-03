@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96ee23c58412473db6c1be7204b49aa5" Name="Diagram1" ZoomLevel="64" >
+        <EntityTypeShape EntityType="CorrenteDoBemModel.AnexoPedidoAjuda" Width="1.5" PointX="13.375" PointY="24.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.CatastrofeNatural" Width="1.5" PointX="10.125" PointY="34.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Contato" Width="1.5" PointX="5.625" PointY="7.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.DadoBancario" Width="1.5" PointX="10.125" PointY="28.625" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Doacao" Width="1.5" PointX="7.875" PointY="17" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Endereco" Width="1.5" PointX="3.375" PointY="13.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.LocalEntrega" Width="1.5" PointX="5.625" PointY="11.5" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.LocalEntregaEndereco" Width="1.5" PointX="7.875" PointY="8.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Motivo" Width="1.5" PointX="7.875" PointY="31.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.PedidoAjudaDoacao" Width="1.5" PointX="10.125" PointY="17.25" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.PedidoAjudaLocalEntrega" Width="1.5" PointX="7.875" PointY="11.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.PrecisoAjuda" Width="1.5" PointX="7.875" PointY="20.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Produto" Width="1.5" PointX="7.875" PointY="5" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.ProdutoDoacao" Width="1.5" PointX="10.125" PointY="14.25" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.ProdutoPedidoAjuda" Width="1.5" PointX="12.375" PointY="18.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.QueroAjudar" Width="1.5" PointX="7.875" PointY="28.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.sysdiagrams" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Usuario" Width="1.5" PointX="5.625" PointY="21.25" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.UsuarioContato" Width="1.5" PointX="7.875" PointY="23.875" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.UsuarioDadoBancario" Width="1.5" PointX="10.875" PointY="25.875" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_MOTIVO_CATASTROFENATURAL" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_CONTATO_LOCALENTREGAENDERECO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_CONTATO_USUARIOCONTATO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_DADOBANCARIO_USUARIODADOBANCARIO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_DOACAO_LOCALENTREGA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_DOACAO_PRODUTODOACAO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_DOACAO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_LOCALENTREGA_ENDERECO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_USUARIO_ENDERECO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_LOCALENTREGA_LOCALENTREGAENDERECO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PRECISOAJUDA_USUARIO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PRODUTO_PRODUTODOACAO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PRODUTO_PRODUTOPEDIDOAJUDA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_QUEROAJUDAR_USUARIO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_USUARIO_USUARIOCONTATO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_USUARIO_USUARIODADOBANCARIO" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.Anexo" Width="1.5" PointX="0.75" PointY="0.875" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_ANEXO_ANEXOPEDIDOAJUDA" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.PedidoAjudaDadoBancario" Width="1.5" PointX="12.375" PointY="21.875" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO" />
+        <EntityTypeShape EntityType="CorrenteDoBemModel.PedidoAjuda" Width="1.5" PointX="13.125" PointY="28.25" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_MOTIVO_PRECISOAJUDA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA" />
+        <AssociationConnector Association="CorrenteDoBemModel.FK_PRECISOAJUDA_PEDIDOAJUDA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

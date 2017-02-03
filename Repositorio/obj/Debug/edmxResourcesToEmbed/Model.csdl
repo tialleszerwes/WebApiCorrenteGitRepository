@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CorrenteDoBemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CorrenteDoBemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AnexoPedidoAjuda" EntityType="CorrenteDoBemModel.AnexoPedidoAjuda" />
+    <EntitySet Name="CatastrofeNatural" EntityType="CorrenteDoBemModel.CatastrofeNatural" />
+    <EntitySet Name="Contato" EntityType="CorrenteDoBemModel.Contato" />
+    <EntitySet Name="DadoBancario" EntityType="CorrenteDoBemModel.DadoBancario" />
+    <EntitySet Name="Doacao" EntityType="CorrenteDoBemModel.Doacao" />
+    <EntitySet Name="Endereco" EntityType="CorrenteDoBemModel.Endereco" />
+    <EntitySet Name="LocalEntrega" EntityType="CorrenteDoBemModel.LocalEntrega" />
+    <EntitySet Name="LocalEntregaEndereco" EntityType="CorrenteDoBemModel.LocalEntregaEndereco" />
+    <EntitySet Name="Motivo" EntityType="CorrenteDoBemModel.Motivo" />
+    <EntitySet Name="PedidoAjudaDoacao" EntityType="CorrenteDoBemModel.PedidoAjudaDoacao" />
+    <EntitySet Name="PedidoAjudaLocalEntrega" EntityType="CorrenteDoBemModel.PedidoAjudaLocalEntrega" />
+    <EntitySet Name="PrecisoAjuda" EntityType="CorrenteDoBemModel.PrecisoAjuda" />
+    <EntitySet Name="Produto" EntityType="CorrenteDoBemModel.Produto" />
+    <EntitySet Name="ProdutoDoacao" EntityType="CorrenteDoBemModel.ProdutoDoacao" />
+    <EntitySet Name="ProdutoPedidoAjuda" EntityType="CorrenteDoBemModel.ProdutoPedidoAjuda" />
+    <EntitySet Name="QueroAjudar" EntityType="CorrenteDoBemModel.QueroAjudar" />
+    <EntitySet Name="sysdiagrams" EntityType="CorrenteDoBemModel.sysdiagrams" />
+    <EntitySet Name="Usuario" EntityType="CorrenteDoBemModel.Usuario" />
+    <EntitySet Name="UsuarioContato" EntityType="CorrenteDoBemModel.UsuarioContato" />
+    <EntitySet Name="UsuarioDadoBancario" EntityType="CorrenteDoBemModel.UsuarioDadoBancario" />
+    <AssociationSet Name="FK_MOTIVO_CATASTROFENATURAL" Association="CorrenteDoBemModel.FK_MOTIVO_CATASTROFENATURAL">
+      <End Role="Motivo" EntitySet="Motivo" />
+      <End Role="CatastrofeNatural" EntitySet="CatastrofeNatural" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTATO_LOCALENTREGAENDERECO" Association="CorrenteDoBemModel.FK_CONTATO_LOCALENTREGAENDERECO">
+      <End Role="Contato" EntitySet="Contato" />
+      <End Role="LocalEntregaEndereco" EntitySet="LocalEntregaEndereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTATO_USUARIOCONTATO" Association="CorrenteDoBemModel.FK_CONTATO_USUARIOCONTATO">
+      <End Role="Contato" EntitySet="Contato" />
+      <End Role="UsuarioContato" EntitySet="UsuarioContato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DADOBANCARIO_USUARIODADOBANCARIO" Association="CorrenteDoBemModel.FK_DADOBANCARIO_USUARIODADOBANCARIO">
+      <End Role="DadoBancario" EntitySet="DadoBancario" />
+      <End Role="UsuarioDadoBancario" EntitySet="UsuarioDadoBancario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOACAO_LOCALENTREGA" Association="CorrenteDoBemModel.FK_DOACAO_LOCALENTREGA">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="Doacao" EntitySet="Doacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOACAO_PRODUTODOACAO" Association="CorrenteDoBemModel.FK_DOACAO_PRODUTODOACAO">
+      <End Role="Doacao" EntitySet="Doacao" />
+      <End Role="ProdutoDoacao" EntitySet="ProdutoDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_DOACAO" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_DOACAO">
+      <End Role="Doacao" EntitySet="Doacao" />
+      <End Role="PedidoAjudaDoacao" EntitySet="PedidoAjudaDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_ENDERECO" Association="CorrenteDoBemModel.FK_LOCALENTREGA_ENDERECO">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_ENDERECO" Association="CorrenteDoBemModel.FK_USUARIO_ENDERECO">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_LOCALENTREGAENDERECO" Association="CorrenteDoBemModel.FK_LOCALENTREGA_LOCALENTREGAENDERECO">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="LocalEntregaEndereco" EntitySet="LocalEntregaEndereco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA" Association="CorrenteDoBemModel.FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA">
+      <End Role="LocalEntrega" EntitySet="LocalEntrega" />
+      <End Role="PedidoAjudaLocalEntrega" EntitySet="PedidoAjudaLocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRECISOAJUDA_USUARIO" Association="CorrenteDoBemModel.FK_PRECISOAJUDA_USUARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PrecisoAjuda" EntitySet="PrecisoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUTO_PRODUTODOACAO" Association="CorrenteDoBemModel.FK_PRODUTO_PRODUTODOACAO">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ProdutoDoacao" EntitySet="ProdutoDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUTO_PRODUTOPEDIDOAJUDA" Association="CorrenteDoBemModel.FK_PRODUTO_PRODUTOPEDIDOAJUDA">
+      <End Role="Produto" EntitySet="Produto" />
+      <End Role="ProdutoPedidoAjuda" EntitySet="ProdutoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUEROAJUDAR_USUARIO" Association="CorrenteDoBemModel.FK_QUEROAJUDAR_USUARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="QueroAjudar" EntitySet="QueroAjudar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIOCONTATO" Association="CorrenteDoBemModel.FK_USUARIO_USUARIOCONTATO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioContato" EntitySet="UsuarioContato" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_USUARIODADOBANCARIO" Association="CorrenteDoBemModel.FK_USUARIO_USUARIODADOBANCARIO">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioDadoBancario" EntitySet="UsuarioDadoBancario" />
+    </AssociationSet>
+    <EntitySet Name="Anexo" EntityType="CorrenteDoBemModel.Anexo" />
+    <AssociationSet Name="FK_ANEXO_ANEXOPEDIDOAJUDA" Association="CorrenteDoBemModel.FK_ANEXO_ANEXOPEDIDOAJUDA">
+      <End Role="Anexo" EntitySet="Anexo" />
+      <End Role="AnexoPedidoAjuda" EntitySet="AnexoPedidoAjuda" />
+    </AssociationSet>
+    <EntitySet Name="PedidoAjudaDadoBancario" EntityType="CorrenteDoBemModel.PedidoAjudaDadoBancario" />
+    <AssociationSet Name="FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO" Association="CorrenteDoBemModel.FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO">
+      <End Role="DadoBancario" EntitySet="DadoBancario" />
+      <End Role="PedidoAjudaDadoBancario" EntitySet="PedidoAjudaDadoBancario" />
+    </AssociationSet>
+    <EntitySet Name="PedidoAjuda" EntityType="CorrenteDoBemModel.PedidoAjuda" />
+    <AssociationSet Name="FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="AnexoPedidoAjuda" EntitySet="AnexoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOTIVO_PRECISOAJUDA" Association="CorrenteDoBemModel.FK_MOTIVO_PRECISOAJUDA">
+      <End Role="Motivo" EntitySet="Motivo" />
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaDadoBancario" EntitySet="PedidoAjudaDadoBancario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaDoacao" EntitySet="PedidoAjudaDoacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="PedidoAjudaLocalEntrega" EntitySet="PedidoAjudaLocalEntrega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA" Association="CorrenteDoBemModel.FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA">
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+      <End Role="ProdutoPedidoAjuda" EntitySet="ProdutoPedidoAjuda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRECISOAJUDA_PEDIDOAJUDA" Association="CorrenteDoBemModel.FK_PRECISOAJUDA_PEDIDOAJUDA">
+      <End Role="PrecisoAjuda" EntitySet="PrecisoAjuda" />
+      <End Role="PedidoAjuda" EntitySet="PedidoAjuda" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AnexoPedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdAnexoPedidoAjuda" />
+    </Key>
+    <Property Name="IdAnexoPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdAnexo" Type="Int32" Nullable="false" />
+    <Property Name="Capa" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Anexo" Relationship="CorrenteDoBemModel.FK_ANEXO_ANEXOPEDIDOAJUDA" FromRole="AnexoPedidoAjuda" ToRole="Anexo" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA" FromRole="AnexoPedidoAjuda" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="CatastrofeNatural">
+    <Key>
+      <PropertyRef Name="IdCatastrofeNatural" />
+    </Key>
+    <Property Name="IdCatastrofeNatural" Type="Int32" Nullable="false" />
+    <Property Name="IdMotivo" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Motivo" Relationship="CorrenteDoBemModel.FK_MOTIVO_CATASTROFENATURAL" FromRole="CatastrofeNatural" ToRole="Motivo" />
+  </EntityType>
+  <EntityType Name="Contato">
+    <Key>
+      <PropertyRef Name="IdContato" />
+    </Key>
+    <Property Name="IdContato" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LocalEntregaEndereco" Relationship="CorrenteDoBemModel.FK_CONTATO_LOCALENTREGAENDERECO" FromRole="Contato" ToRole="LocalEntregaEndereco" />
+    <NavigationProperty Name="UsuarioContato" Relationship="CorrenteDoBemModel.FK_CONTATO_USUARIOCONTATO" FromRole="Contato" ToRole="UsuarioContato" />
+  </EntityType>
+  <EntityType Name="DadoBancario">
+    <Key>
+      <PropertyRef Name="IdDadoBancario" />
+    </Key>
+    <Property Name="IdDadoBancario" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Banco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UsuarioDadoBancario" Relationship="CorrenteDoBemModel.FK_DADOBANCARIO_USUARIODADOBANCARIO" FromRole="DadoBancario" ToRole="UsuarioDadoBancario" />
+    <NavigationProperty Name="PedidoAjudaDadoBancario" Relationship="CorrenteDoBemModel.FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO" FromRole="DadoBancario" ToRole="PedidoAjudaDadoBancario" />
+  </EntityType>
+  <EntityType Name="Doacao">
+    <Key>
+      <PropertyRef Name="IdDoacao" />
+    </Key>
+    <Property Name="IdDoacao" Type="Int32" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="Int32" />
+    <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Observacao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LocalEntrega" Relationship="CorrenteDoBemModel.FK_DOACAO_LOCALENTREGA" FromRole="Doacao" ToRole="LocalEntrega" />
+    <NavigationProperty Name="ProdutoDoacao" Relationship="CorrenteDoBemModel.FK_DOACAO_PRODUTODOACAO" FromRole="Doacao" ToRole="ProdutoDoacao" />
+    <NavigationProperty Name="PedidoAjudaDoacao" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_DOACAO" FromRole="Doacao" ToRole="PedidoAjudaDoacao" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="IdEndereco" />
+    </Key>
+    <Property Name="IdEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rua" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Logradouro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Numero" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Municipio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PontoReferencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LocalEntrega" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_ENDERECO" FromRole="Endereco" ToRole="LocalEntrega" />
+    <NavigationProperty Name="Usuario" Relationship="CorrenteDoBemModel.FK_USUARIO_ENDERECO" FromRole="Endereco" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="LocalEntrega">
+    <Key>
+      <PropertyRef Name="IdLocalEntrega" />
+    </Key>
+    <Property Name="IdLocalEntrega" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEndereco" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Doacao" Relationship="CorrenteDoBemModel.FK_DOACAO_LOCALENTREGA" FromRole="LocalEntrega" ToRole="Doacao" />
+    <NavigationProperty Name="Endereco" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_ENDERECO" FromRole="LocalEntrega" ToRole="Endereco" />
+    <NavigationProperty Name="LocalEntregaEndereco" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_LOCALENTREGAENDERECO" FromRole="LocalEntrega" ToRole="LocalEntregaEndereco" />
+    <NavigationProperty Name="PedidoAjudaLocalEntrega" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA" FromRole="LocalEntrega" ToRole="PedidoAjudaLocalEntrega" />
+  </EntityType>
+  <EntityType Name="LocalEntregaEndereco">
+    <Key>
+      <PropertyRef Name="IdLocalEntregaEndereco" />
+    </Key>
+    <Property Name="IdLocalEntregaEndereco" Type="Int32" Nullable="false" />
+    <Property Name="IdContato" Type="Int32" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contato" Relationship="CorrenteDoBemModel.FK_CONTATO_LOCALENTREGAENDERECO" FromRole="LocalEntregaEndereco" ToRole="Contato" />
+    <NavigationProperty Name="LocalEntrega" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_LOCALENTREGAENDERECO" FromRole="LocalEntregaEndereco" ToRole="LocalEntrega" />
+  </EntityType>
+  <EntityType Name="Motivo">
+    <Key>
+      <PropertyRef Name="IdMotivo" />
+    </Key>
+    <Property Name="IdMotivo" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CatastrofeNatural" Relationship="CorrenteDoBemModel.FK_MOTIVO_CATASTROFENATURAL" FromRole="Motivo" ToRole="CatastrofeNatural" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_MOTIVO_PRECISOAJUDA" FromRole="Motivo" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="PedidoAjudaDoacao">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaDoacao" />
+    </Key>
+    <Property Name="IdPedidoAjudaDoacao" Type="Int32" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdDoacao" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Doacao" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_DOACAO" FromRole="PedidoAjudaDoacao" ToRole="Doacao" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO" FromRole="PedidoAjudaDoacao" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="PedidoAjudaLocalEntrega">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaLocalEntrega" />
+    </Key>
+    <Property Name="IdPedidoAjudaLocalEntrega" Type="Int32" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdLocalEntrega" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LocalEntrega" Relationship="CorrenteDoBemModel.FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA" FromRole="PedidoAjudaLocalEntrega" ToRole="LocalEntrega" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA" FromRole="PedidoAjudaLocalEntrega" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="PrecisoAjuda">
+    <Key>
+      <PropertyRef Name="IdPrecisoAjuda" />
+    </Key>
+    <Property Name="IdPrecisoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="CorrenteDoBemModel.FK_PRECISOAJUDA_USUARIO" FromRole="PrecisoAjuda" ToRole="Usuario" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PRECISOAJUDA_PEDIDOAJUDA" FromRole="PrecisoAjuda" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="Produto">
+    <Key>
+      <PropertyRef Name="IdProduto" />
+    </Key>
+    <Property Name="IdProduto" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descricao" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Tamanho" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sexo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Quantidade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProdutoDoacao" Relationship="CorrenteDoBemModel.FK_PRODUTO_PRODUTODOACAO" FromRole="Produto" ToRole="ProdutoDoacao" />
+    <NavigationProperty Name="ProdutoPedidoAjuda" Relationship="CorrenteDoBemModel.FK_PRODUTO_PRODUTOPEDIDOAJUDA" FromRole="Produto" ToRole="ProdutoPedidoAjuda" />
+  </EntityType>
+  <EntityType Name="ProdutoDoacao">
+    <Key>
+      <PropertyRef Name="IdProdutoDoacao" />
+    </Key>
+    <Property Name="IdProdutoDoacao" Type="Int32" Nullable="false" />
+    <Property Name="IdDoacao" Type="Int32" Nullable="false" />
+    <Property Name="IdProduto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Doacao" Relationship="CorrenteDoBemModel.FK_DOACAO_PRODUTODOACAO" FromRole="ProdutoDoacao" ToRole="Doacao" />
+    <NavigationProperty Name="Produto" Relationship="CorrenteDoBemModel.FK_PRODUTO_PRODUTODOACAO" FromRole="ProdutoDoacao" ToRole="Produto" />
+  </EntityType>
+  <EntityType Name="ProdutoPedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdProdutoPedidoAjuda" />
+    </Key>
+    <Property Name="IdProdutoPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdProduto" Type="Int32" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Produto" Relationship="CorrenteDoBemModel.FK_PRODUTO_PRODUTOPEDIDOAJUDA" FromRole="ProdutoPedidoAjuda" ToRole="Produto" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA" FromRole="ProdutoPedidoAjuda" ToRole="PedidoAjuda" />
+  </EntityType>
+  <EntityType Name="QueroAjudar">
+    <Key>
+      <PropertyRef Name="IdQueroAjudar" />
+    </Key>
+    <Property Name="IdQueroAjudar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="CorrenteDoBemModel.FK_QUEROAJUDAR_USUARIO" FromRole="QueroAjudar" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEndereco" Type="Int32" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DtNascimento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HashSenha" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DtUltimoAcesso" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Endereco" Relationship="CorrenteDoBemModel.FK_USUARIO_ENDERECO" FromRole="Usuario" ToRole="Endereco" />
+    <NavigationProperty Name="PrecisoAjuda" Relationship="CorrenteDoBemModel.FK_PRECISOAJUDA_USUARIO" FromRole="Usuario" ToRole="PrecisoAjuda" />
+    <NavigationProperty Name="QueroAjudar" Relationship="CorrenteDoBemModel.FK_QUEROAJUDAR_USUARIO" FromRole="Usuario" ToRole="QueroAjudar" />
+    <NavigationProperty Name="UsuarioContato" Relationship="CorrenteDoBemModel.FK_USUARIO_USUARIOCONTATO" FromRole="Usuario" ToRole="UsuarioContato" />
+    <NavigationProperty Name="UsuarioDadoBancario" Relationship="CorrenteDoBemModel.FK_USUARIO_USUARIODADOBANCARIO" FromRole="Usuario" ToRole="UsuarioDadoBancario" />
+  </EntityType>
+  <EntityType Name="UsuarioContato">
+    <Key>
+      <PropertyRef Name="IdUsuarioContato" />
+    </Key>
+    <Property Name="IdUsuarioContato" Type="Int32" Nullable="false" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="IdContato" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Contato" Relationship="CorrenteDoBemModel.FK_CONTATO_USUARIOCONTATO" FromRole="UsuarioContato" ToRole="Contato" />
+    <NavigationProperty Name="Usuario" Relationship="CorrenteDoBemModel.FK_USUARIO_USUARIOCONTATO" FromRole="UsuarioContato" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="UsuarioDadoBancario">
+    <Key>
+      <PropertyRef Name="IdUsuarioDadoBancario" />
+    </Key>
+    <Property Name="IdUsuarioDadoBancario" Type="Int32" Nullable="false" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="IdDadoBancario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DadoBancario" Relationship="CorrenteDoBemModel.FK_DADOBANCARIO_USUARIODADOBANCARIO" FromRole="UsuarioDadoBancario" ToRole="DadoBancario" />
+    <NavigationProperty Name="Usuario" Relationship="CorrenteDoBemModel.FK_USUARIO_USUARIODADOBANCARIO" FromRole="UsuarioDadoBancario" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_MOTIVO_CATASTROFENATURAL">
+    <End Type="CorrenteDoBemModel.Motivo" Role="Motivo" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.CatastrofeNatural" Role="CatastrofeNatural" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motivo">
+        <PropertyRef Name="IdMotivo" />
+      </Principal>
+      <Dependent Role="CatastrofeNatural">
+        <PropertyRef Name="IdMotivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTATO_LOCALENTREGAENDERECO">
+    <End Type="CorrenteDoBemModel.Contato" Role="Contato" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.LocalEntregaEndereco" Role="LocalEntregaEndereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contato">
+        <PropertyRef Name="IdContato" />
+      </Principal>
+      <Dependent Role="LocalEntregaEndereco">
+        <PropertyRef Name="IdContato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTATO_USUARIOCONTATO">
+    <End Type="CorrenteDoBemModel.Contato" Role="Contato" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.UsuarioContato" Role="UsuarioContato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contato">
+        <PropertyRef Name="IdContato" />
+      </Principal>
+      <Dependent Role="UsuarioContato">
+        <PropertyRef Name="IdContato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DADOBANCARIO_USUARIODADOBANCARIO">
+    <End Type="CorrenteDoBemModel.DadoBancario" Role="DadoBancario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.UsuarioDadoBancario" Role="UsuarioDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Principal>
+      <Dependent Role="UsuarioDadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOACAO_LOCALENTREGA">
+    <End Type="CorrenteDoBemModel.LocalEntrega" Role="LocalEntrega" Multiplicity="0..1" />
+    <End Type="CorrenteDoBemModel.Doacao" Role="Doacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="Doacao">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOACAO_PRODUTODOACAO">
+    <End Type="CorrenteDoBemModel.Doacao" Role="Doacao" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.ProdutoDoacao" Role="ProdutoDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doacao">
+        <PropertyRef Name="IdDoacao" />
+      </Principal>
+      <Dependent Role="ProdutoDoacao">
+        <PropertyRef Name="IdDoacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_DOACAO">
+    <End Type="CorrenteDoBemModel.Doacao" Role="Doacao" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaDoacao" Role="PedidoAjudaDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doacao">
+        <PropertyRef Name="IdDoacao" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDoacao">
+        <PropertyRef Name="IdDoacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_ENDERECO">
+    <End Type="CorrenteDoBemModel.Endereco" Role="Endereco" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.LocalEntrega" Role="LocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="IdEndereco" />
+      </Principal>
+      <Dependent Role="LocalEntrega">
+        <PropertyRef Name="IdEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_ENDERECO">
+    <End Type="CorrenteDoBemModel.Endereco" Role="Endereco" Multiplicity="0..1" />
+    <End Type="CorrenteDoBemModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="IdEndereco" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_LOCALENTREGAENDERECO">
+    <End Type="CorrenteDoBemModel.LocalEntrega" Role="LocalEntrega" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.LocalEntregaEndereco" Role="LocalEntregaEndereco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="LocalEntregaEndereco">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCALENTREGA_PEDIDOAJUDALOCALENTREGA">
+    <End Type="CorrenteDoBemModel.LocalEntrega" Role="LocalEntrega" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaLocalEntrega" Role="PedidoAjudaLocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Principal>
+      <Dependent Role="PedidoAjudaLocalEntrega">
+        <PropertyRef Name="IdLocalEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRECISOAJUDA_USUARIO">
+    <End Type="CorrenteDoBemModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PrecisoAjuda" Role="PrecisoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="PrecisoAjuda">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUTO_PRODUTODOACAO">
+    <End Type="CorrenteDoBemModel.Produto" Role="Produto" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.ProdutoDoacao" Role="ProdutoDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="IdProduto" />
+      </Principal>
+      <Dependent Role="ProdutoDoacao">
+        <PropertyRef Name="IdProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUTO_PRODUTOPEDIDOAJUDA">
+    <End Type="CorrenteDoBemModel.Produto" Role="Produto" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.ProdutoPedidoAjuda" Role="ProdutoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produto">
+        <PropertyRef Name="IdProduto" />
+      </Principal>
+      <Dependent Role="ProdutoPedidoAjuda">
+        <PropertyRef Name="IdProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUEROAJUDAR_USUARIO">
+    <End Type="CorrenteDoBemModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.QueroAjudar" Role="QueroAjudar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="QueroAjudar">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIOCONTATO">
+    <End Type="CorrenteDoBemModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.UsuarioContato" Role="UsuarioContato" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioContato">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_USUARIODADOBANCARIO">
+    <End Type="CorrenteDoBemModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.UsuarioDadoBancario" Role="UsuarioDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="UsuarioDadoBancario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Anexo">
+    <Key>
+      <PropertyRef Name="IdAnexo" />
+    </Key>
+    <Property Name="IdAnexo" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CaminhoArquivo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AnexoPedidoAjuda" Relationship="CorrenteDoBemModel.FK_ANEXO_ANEXOPEDIDOAJUDA" FromRole="Anexo" ToRole="AnexoPedidoAjuda" />
+  </EntityType>
+  <Association Name="FK_ANEXO_ANEXOPEDIDOAJUDA">
+    <End Type="CorrenteDoBemModel.Anexo" Role="Anexo" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.AnexoPedidoAjuda" Role="AnexoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anexo">
+        <PropertyRef Name="IdAnexo" />
+      </Principal>
+      <Dependent Role="AnexoPedidoAjuda">
+        <PropertyRef Name="IdAnexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PedidoAjudaDadoBancario">
+    <Key>
+      <PropertyRef Name="IdPedidoAjudaDadoBancario" />
+    </Key>
+    <Property Name="IdPedidoAjudaDadoBancario" Type="Int32" Nullable="false" />
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdDadoBancario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DadoBancario" Relationship="CorrenteDoBemModel.FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO" FromRole="PedidoAjudaDadoBancario" ToRole="DadoBancario" />
+    <NavigationProperty Name="PedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO" FromRole="PedidoAjudaDadoBancario" ToRole="PedidoAjuda" />
+  </EntityType>
+  <Association Name="FK_DADOBANCARIO_PEDIDOAJUDADADOBANCARIO">
+    <End Type="CorrenteDoBemModel.DadoBancario" Role="DadoBancario" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaDadoBancario" Role="PedidoAjudaDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDadoBancario">
+        <PropertyRef Name="IdDadoBancario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PedidoAjuda">
+    <Key>
+      <PropertyRef Name="IdPedidoAjuda" />
+    </Key>
+    <Property Name="IdPedidoAjuda" Type="Int32" Nullable="false" />
+    <Property Name="IdMotivo" Type="Int32" Nullable="false" />
+    <Property Name="IdPrecisoAjuda" Type="Int32" />
+    <Property Name="Descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DtAcontecimento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DtCadastro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QuantidadeAfetados" Type="Int32" Nullable="false" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AnexoPedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA" FromRole="PedidoAjuda" ToRole="AnexoPedidoAjuda" />
+    <NavigationProperty Name="Motivo" Relationship="CorrenteDoBemModel.FK_MOTIVO_PRECISOAJUDA" FromRole="PedidoAjuda" ToRole="Motivo" />
+    <NavigationProperty Name="PedidoAjudaDadoBancario" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO" FromRole="PedidoAjuda" ToRole="PedidoAjudaDadoBancario" />
+    <NavigationProperty Name="PedidoAjudaDoacao" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO" FromRole="PedidoAjuda" ToRole="PedidoAjudaDoacao" />
+    <NavigationProperty Name="PedidoAjudaLocalEntrega" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA" FromRole="PedidoAjuda" ToRole="PedidoAjudaLocalEntrega" />
+    <NavigationProperty Name="ProdutoPedidoAjuda" Relationship="CorrenteDoBemModel.FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA" FromRole="PedidoAjuda" ToRole="ProdutoPedidoAjuda" />
+    <NavigationProperty Name="PrecisoAjuda" Relationship="CorrenteDoBemModel.FK_PRECISOAJUDA_PEDIDOAJUDA" FromRole="PedidoAjuda" ToRole="PrecisoAjuda" />
+  </EntityType>
+  <Association Name="FK_PEDIDOAJUDA_ANEXOPEDIDOAJUDA">
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.AnexoPedidoAjuda" Role="AnexoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="AnexoPedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOTIVO_PRECISOAJUDA">
+    <End Type="CorrenteDoBemModel.Motivo" Role="Motivo" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motivo">
+        <PropertyRef Name="IdMotivo" />
+      </Principal>
+      <Dependent Role="PedidoAjuda">
+        <PropertyRef Name="IdMotivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDADADOBANCARIO">
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaDadoBancario" Role="PedidoAjudaDadoBancario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDadoBancario">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDADOACAO">
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaDoacao" Role="PedidoAjudaDoacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaDoacao">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PEDIDOAJUDALOCALENTREGA">
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.PedidoAjudaLocalEntrega" Role="PedidoAjudaLocalEntrega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjudaLocalEntrega">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEDIDOAJUDA_PRODUTOPEDIDOAJUDA">
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="1" />
+    <End Type="CorrenteDoBemModel.ProdutoPedidoAjuda" Role="ProdutoPedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Principal>
+      <Dependent Role="ProdutoPedidoAjuda">
+        <PropertyRef Name="IdPedidoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRECISOAJUDA_PEDIDOAJUDA">
+    <End Type="CorrenteDoBemModel.PrecisoAjuda" Role="PrecisoAjuda" Multiplicity="0..1" />
+    <End Type="CorrenteDoBemModel.PedidoAjuda" Role="PedidoAjuda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrecisoAjuda">
+        <PropertyRef Name="IdPrecisoAjuda" />
+      </Principal>
+      <Dependent Role="PedidoAjuda">
+        <PropertyRef Name="IdPrecisoAjuda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
